@@ -26,4 +26,3 @@ Andrew Z., numb384@gmail.com
 ## License
 
 SimpleData is available under the MIT license. See the LICENSE file for more info.
-
