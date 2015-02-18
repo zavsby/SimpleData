@@ -7,7 +7,7 @@
 
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Examples of using this framework will be available later.
 
 ## Requirements
 
@@ -18,7 +18,7 @@ it, simply add the following line to your Podfile:
 
     pod "SimpleData"
 
-## Author
+## Authors
 
 Sergey P., zavsby@gmail.com
 
