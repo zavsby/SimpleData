@@ -21,6 +21,7 @@ it, simply add the following line to your Podfile:
 ## Author
 
 Sergey P., zavsby@gmail.com
+
 Andrew Z., numb384@gmail.com
 
 ## License

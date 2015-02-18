@@ -7,7 +7,6 @@
 //
 
 #import "NSManagedObject+SimpleData.h"
-#import "GlobalConstants.h"
 
 @implementation NSManagedObject (SimpleData)
 
@@ -34,6 +33,11 @@
 
 + (NSArray *)findOrCreateMultiple:(NSArray *)newObjects byKey:(NSString *)key dbKey:(NSString *)dbKey process:(SimpleDataFindOrCreateProcessBlock)processBlock
 {
+    if (newObjects.count == 0)
+    {
+        return nil;
+    }
+    
     NSArray *sortedNewObjects = [newObjects sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         return [[obj1 valueForKey:key] compare:[obj2 valueForKey:key]];
     }];
@@ -42,7 +46,7 @@
     }];
     
     NSFetchRequest *request = [self fetchRequestFromCurrentClass];
-    request.predicate = [NSPredicate predicateWithFormat:@"%@ IN %@", dbKey, newObjectsIds];
+    request.predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"%@ IN %%@", dbKey], newObjectsIds];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:dbKey ascending:YES]];
     
     NSArray *results = [[[SimpleDataModel sharedDataModel] contextForCurrentThread] executeFetchRequest:request error:nil];

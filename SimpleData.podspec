@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/zavsby/SimpleData", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/zavsby/SimpleData.git", :tag => "1.0.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -116,7 +116,7 @@ Pod::Spec.new do |s|
   #
 
   # s.framework  = "SomeFramework"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
+  s.frameworks = "CoreData", "Foundation"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
